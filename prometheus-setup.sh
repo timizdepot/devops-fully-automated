@@ -20,7 +20,7 @@ sudo cp prometheus-2.23.0.linux-amd64/promtool /usr/local/bin/
 
 rm -rf prometheus-2.23.0.linux-amd64.tar.gz prometheus-2.19.0.linux-amd64
 # setting up the dependencies from the repo setup
-sudo git clone -b installations https://github.com/cvamsikrishna11/devops-fully-automated.git /tmp/devops-fully-automated
+sudo git clone -b installations https://github.com/timizdepot/devops-fully-automated.git /tmp/devops-fully-automated
 sudo cp /tmp/devops-fully-automated/prometheus-setup-dependencies/prometheus.yml /etc/prometheus/
 sudo cp /tmp/devops-fully-automated/prometheus-setup-dependencies/prometheus.service /etc/systemd/system/prometheus.service
 
