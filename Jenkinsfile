@@ -19,7 +19,7 @@ pipeline {
         stage('Git checkout') {
             steps {
                 echo 'Cloning the application code...'
-                git branch: 'main', url: 'https://github.com/cvamsikrishna11/devops-fully-automated.git'
+                git branch: 'main', url: 'https://github.com/timizdepot/devops-fully-automated.git'
 
             }
         }
@@ -102,7 +102,13 @@ pipeline {
                 }
             }
         }
-
+        
+        stage('Approval') {
+            steps {
+                input('Do you want to proceed?')
+            }
+        }
+        
         stage('Deploy to STAGE env') {
             environment {
                 HOSTS = 'stage'
