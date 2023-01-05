@@ -112,8 +112,17 @@
         
         **Note:** By default the **Install Oracle Java SE Development Kit from the website** make sure to close that option by clicking on the image as shown below.
 
+<<<<<<< HEAD
         ![JDKSetup!](https://github.com/timizdepot/devops-fully-automated/blob/main/jdk%20setup.png)
+=======
+        <!-- ![JDKSetup!](https://github.com/cvamsikrishna11/devops-fully-automated/blob/main/jdk_setup.png) -->
+>>>>>>> 2035a7b6638e527b0f1c05c74020d9c62a40b5f5
         
+        ![JDKSetup!](https://github.com/cvamsikrishna11/devops-fully-automated/blob/main/jdk_setup.png" Remove the default JDK")
+
+
+        ![JDK!](jdk_setup.png?raw=true Remove the default JDK")
+
         * Click on Add installer
         * Select Extract *.zip/*.tar.gz --> Fill the below values
         * Name: **localJdk**
