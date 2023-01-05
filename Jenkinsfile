@@ -103,7 +103,7 @@ pipeline {
             }
         }
         
-        stage('Approval') {
+        stage('UatApproval') {
             steps {
                 input('Do you want to proceed?')
             }
@@ -120,7 +120,7 @@ pipeline {
             }
         }
 
-        stage('Approval') {
+        stage('ProdApproval') {
             steps {
                 input('Do you want to proceed?')
             }
