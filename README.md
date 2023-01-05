@@ -115,10 +115,10 @@
 <<<<<<< HEAD
         ![JDKSetup!](https://github.com/timizdepot/devops-fully-automated/blob/main/jdk%20setup.png)
 =======
-        <!-- ![JDKSetup!](https://github.com/cvamsikrishna11/devops-fully-automated/blob/main/jdk_setup.png) -->
+        <!-- ![JDKSetup!](https://github.com/timizdepot/devops-fully-automated/blob/main/jdk_setup.png) -->
 >>>>>>> 2035a7b6638e527b0f1c05c74020d9c62a40b5f5
         
-        ![JDKSetup!](https://github.com/cvamsikrishna11/devops-fully-automated/blob/main/jdk_setup.png" Remove the default JDK")
+        ![JDKSetup!](https://github.com/timizdepot/devops-fully-automated/blob/main/jdk_setup.png" Remove the default JDK")
 
 
         ![JDK!](jdk_setup.png?raw=true Remove the default JDK")
