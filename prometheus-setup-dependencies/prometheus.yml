@@ -11,6 +11,16 @@ scrape_configs:
     ec2_sd_configs:
       - region: us-east-1        
         port: 9100
+  - job_name: 'nodes'
+    static_configs:
+      - targets:
+        - "grafana-ne.timizus.com"
+        - "jenkins-ne.timizus.com"
+        - "nexus-ne.timizus.com"
+        - "sonarqube-ne.timizus.com"
+        - "dev-ne.timizus.com"
+        - "stage-ne.timizus.com"
+        - "prod-ne.timizus.com"
   - job_name: 'jenkins'
     metrics_path: /prometheus/
     ec2_sd_configs:     
