@@ -23,6 +23,10 @@ scrape_configs:
         - "prod-ne.timizus.com"
   - job_name: 'jenkins'
     metrics_path: /prometheus/
+    static_configs:
+     - targets: ["jenkins.timizus.com"]
+  - job_name: 'jenkins-d'
+    metrics_path: /prometheus/
     ec2_sd_configs:     
       - region: us-east-1        
         port: 8080
