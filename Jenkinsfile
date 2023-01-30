@@ -66,7 +66,7 @@ pipeline {
                         sh """
                     mvn sonar:sonar \
                     -Dsonar.projectKey=maven \
-                    -Dsonar.host.url=http://s.timizus.com:9000 \
+                    -Dsonar.host.url=https://sonarqube.timizus.com \
                     -Dsonar.login=$SONAR_TOKEN
                     """
                     }
@@ -103,7 +103,7 @@ pipeline {
             }
         }
         
-        stage('UatApproval') {
+        stage('StageApproval') {
             steps {
                 input('Do you want to proceed?')
             }
