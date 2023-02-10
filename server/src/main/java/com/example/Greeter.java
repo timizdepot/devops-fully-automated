@@ -9,7 +9,7 @@ public class Greeter {
    * This is a constructor.
    */
   public Greeter() {
-    return String.format("Hello Dff");
+    return String("Hello Dff");
   }
 
  /**
