@@ -5,12 +5,15 @@
     dest_path: "/var/lib/tomcat/webapps"
     config_file_src_path: "{{ hosts }}-config.yaml"
     config_file_dest_path: "/home"
+    username: "ec2-user"
   tasks:
     - name: copying file with playbook
       become: true
       copy:
         src: "{{ src_path }}"
         dest: "{{ dest_path }}"
-        owner: ansadmin
-        group: ansadmin
+        # owner: ansadmin
+        # group: ansadmin
+        owner: "{{ username }}"
+        group: "{{ username }}"
         mode: 0644

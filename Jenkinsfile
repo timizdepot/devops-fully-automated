@@ -66,7 +66,7 @@ pipeline {
                         sh """
                     mvn sonar:sonar \
                     -Dsonar.projectKey=maven \
-                    -Dsonar.host.url=https://sonarqube.timizus.com \
+                    -Dsonar.host.url=https://sonarqube.sewewa.com \
                     -Dsonar.login=$SONAR_TOKEN
                     """
                     }
@@ -98,7 +98,8 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'ansible-deploy-server-credentials', passwordVariable: 'PASSWORD', usernameVariable: 'USER_NAME')]) {
-                    sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_user=$USER_NAME ansible_password=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
+                    // sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_user=$USER_NAME ansible_password=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
+                    sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_ssh_user=$USER_NAME ansible_ssh_private_key_file=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
                 }
             }
         }
@@ -115,7 +116,8 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'ansible-deploy-server-credentials', passwordVariable: 'PASSWORD', usernameVariable: 'USER_NAME')]) {
-                    sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_user=$USER_NAME ansible_password=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
+                    // sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_user=$USER_NAME ansible_password=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
+                    sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_ssh_user=$USER_NAME ansible_ssh_private_key_file=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
                 }
             }
         }
@@ -132,7 +134,8 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'ansible-deploy-server-credentials', passwordVariable: 'PASSWORD', usernameVariable: 'USER_NAME')]) {
-                    sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_user=$USER_NAME ansible_password=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
+                    // sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_user=$USER_NAME ansible_password=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
+                    sh "ansible-playbook -i ${WORKSPACE}/ansible-setup/aws_ec2.yaml ${WORKSPACE}/deploy.yaml --extra-vars \"ansible_ssh_user=$USER_NAME ansible_ssh_private_key_file=$PASSWORD hosts=tag_Role_$HOSTS workspace_path=$WORKSPACE\""
                 }
             }
         }
