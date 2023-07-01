@@ -3,7 +3,7 @@
 # Installing Jenkins
 sudo yum update -y
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 sudo yum upgrade
 sudo amazon-linux-extras install java-openjdk11 -y
 sudo yum install jenkins -y
@@ -27,8 +27,8 @@ sudo amazon-linux-extras install java-openjdk11 -y
 sudo amazon-linux-extras install ansible2 -y
 sudo yum install python-pip -y
 sudo pip install boto3
-sudo useradd ansadmin
-sudo echo ansadmin:ansadmin | chpasswd
+# sudo useradd ansadmin
+# sudo echo ansadmin:ansadmin | chpasswd
 sudo sed -i "s/.*#host_key_checking = False/host_key_checking = False/g" /etc/ansible/ansible.cfg
 sudo sed -i "s/.*#enable_plugins = host_list, virtualbox, yaml, constructed/enable_plugins = aws_ec2/g" /etc/ansible/ansible.cfg
 sudo ansible-galaxy collection install amazon.aws

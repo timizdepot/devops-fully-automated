@@ -9,30 +9,30 @@ scrape_configs:
     - targets: ['localhost:9090']
   - job_name: 'node'
     ec2_sd_configs:
-      - region: us-east-1        
+      - region: us-east-2        
         port: 9100
   - job_name: 'nodes'
     static_configs:
       - targets:
-        - "grafana-ne.timizus.com"
-        - "jenkins-ne.timizus.com"
-        - "nexus-ne.timizus.com"
-        - "sonarqube-ne.timizus.com"
-        - "dev-ne.timizus.com"
-        - "stage-ne.timizus.com"
-        - "prod-ne.timizus.com"
-        - "k8s-master1-ne.timizus.com"
-        - "k8s-master2-ne.timizus.com"
-        - "k8s-worker1-ne.timizus.com"
-        - "k8s-worker2-ne.timizus.com"
+        - "grafana-ne.sewewa.com"
+        - "jenkins-ne.sewewa.com"
+        - "nexus-ne.sewewa.com"
+        - "sonarqube-ne.sewewa.com"
+        - "dev-ne.sewewa.com"
+        - "stage-ne.sewewa.com"
+        - "prod-ne.sewewa.com"
+        - "k8s-master1-ne.sewewa.com"
+        - "k8s-master2-ne.sewewa.com"
+        - "k8s-worker1-ne.sewewa.com"
+        - "k8s-worker2-ne.sewewa.com"
   - job_name: 'jenkins'
     metrics_path: /prometheus/
     static_configs:
-     - targets: ["jenkins.timizus.com"]
+     - targets: ["jenkins.sewewa.com"]
   - job_name: 'jenkins-d'
     metrics_path: /prometheus/
     ec2_sd_configs:     
-      - region: us-east-1        
+      - region: us-east-2        
         port: 8080
         filters:
           - name: tag:Application
